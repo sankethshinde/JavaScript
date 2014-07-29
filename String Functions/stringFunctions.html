@@ -1,44 +1,51 @@
 <HTML>
 <HEAD>
-<TITLE>String Functions</TITLE>
-<script src="StrFunctions.js"></script>
+	<TITLE>String Functions</TITLE>
+	<script src="StrFunctions.js"></script>
+	<link rel="stylesheet" type="text/css" href="stringFunctions.css" />
 </HEAD>
+
 <BODY>
-	
-<Form class="FormString">
-	
-	<input type="text" placeholder="Enter A first String: " id="firstString" />
-	<br />
-	<input type="text" placeholder="Enter A Second String: " id="secondString" />
-	<br />
-	<input type="number" placeholder="Enter a start Index: " id="startIndex" />
-	<br />
-	<input type="number" placeholder="Enter A end Index: " id="endIndex" />
-	<br />
-	<input type="number" placeholder="Enter Character Index:" id="charIndex" />
-	<br />
-	<input type="text" placeholder="Enter Character:" id="character1" />
-	<br />
-	<input type="text" placeholder="Enter string which you want to replace in first string: " id="stringToReplace" />
-	<br />
-	<input type="text" placeholder="Enter string to replace in first string: " id="replacingString" />
-	<br />
+	<Form class="FormString">
+		<input type="text" placeholder="Enter A first String: " id="firstString" />
+		<br />
+		<input type="text" placeholder="Enter A Second String: " id="secondString" />
+		<br />
+		<input type="number" placeholder="Enter a start Index: " id="startIndex" />
+		<br />
+		<input type="number" placeholder="Enter A end Index: " id="endIndex" />
+		<br />
+		<input type="number" placeholder="Enter Character Index:" id="charIndex" />
+		<br />
+		<input type="text" placeholder="Enter Character:" id="character1" />
+		<br />
+		<input type="text" placeholder="Enter string which you want to replace in first string: " id="stringToReplace" />
+		<br />
+		<input type="text" placeholder="Enter string to replace in first string: " id="replacingString" />
+		<br />
+		<br /> 
+		<TABLE BORDER="1" CellSpacing="0" CellPadding="6">
+		<TR>
+		  <TD align="right">String Operations</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="concat" 	   >Concatenation</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="substring"    >Substring</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="length"       >Length</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="charaT"      >CharAT</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="replace"     >Replace</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="indexof"	 >Index of</TD>
+		  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  id="lastIndexof"	 >Last Index of</TD>
+		</TR>
+		</table>
+	</Form>
 
 
+	<div>
+	<button id="submit">Submit</button>
+	</div>
 
-<TABLE BORDER="1" CellSpacing="0" CellPadding="6">
-<TR>
-  <TD align="right">String Operations</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="concat" 	  onClick="operations();" >Concatenation</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="substring"   onClick="operations();" >Substring</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="length"      onClick="operations();" >Length</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="charaT"      onClick="operations();" >CharAT</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="replace"      onClick="operations();" >Replace</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="indexof"      onClick="operations();" >Index of</TD>
-  <TD><INPUT TYPE="Checkbox" NAME="StringOperations"  VALUE="lastIndexof"      onClick="operations();" >Last Index of</TD>
-</TR>
+	<div>
 	<p id="demo"></p>
-</Form>
+	</div>
 
 </BODY>
 </HTML>
