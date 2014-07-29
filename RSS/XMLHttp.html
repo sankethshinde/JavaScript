@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function loadXMLDoc()
+{
+        var xmlhttp;
+        xmlhttp=new XMLHttpRequest();
+              
+        xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+           // document.getElementById("demo").innerHTML=xmlhttp.responseText;
+            var result =JSON.parse(xmlhttp.responseText);
+                            var len =result.deals.length;
+                            for (var i =0; i<len;i++)
+                            {
+                                            var res = result.deals[i];
+                                            var hoteldiv = document.createElement("DIV");
+                                            hoteldiv.id = "hoteldivno"+i;
+                                            hoteldiv.style.border = "1px solid";
+                                            hoteldiv.style.background ="#E6E6E6";
+                                            var hoteldesdiv = document.createElement("DIV");
+                                            hoteldesdiv.style.float = "left";
+                                            hoteldesdiv.style.width = "50%";
+                                           
+                                            hoteldiv.appendChild(hoteldesdiv);
+                                   
+                                            var hotelnametext = document.createElement("H1");
+                                            hotelnametext.innerHTML=res.hotelName;
+                                            hoteldesdiv.appendChild(hotelnametext);
+
+                                            var hoteldescription = document.createTextNode(res.description);
+                                            hoteldesdiv.appendChild(hoteldescription);
+
+                                            var hotelimgdiv = document.createElement("DIV");
+                                            //hotelimgdiv.style.width = "50%";
+                                            hoteldiv.appendChild(hotelimgdiv);
+                                            var hotelimg = document.createElement("IMG");
+                                            hotelimg.src = res.imageUrl;
+                                            hotelimg.style.width= "300px";
+                                            hotelimg.style.height = "200px";
+                                            hotelimg.style.padding = "10px";
+                                            hotelimg.style.border = "2 px grey";
+                                   
+                                            hotelimgdiv.appendChild(hotelimg);
+                                            document.getElementById("container").appendChild(hoteldiv);
+                            }
+          }
+        }
+
+        var checks=document.forms[0].RSS;
+        var i;
+        for (i = 0; i < checks.length; i++)
+        {
+        if (checks[i].checked)
+        {
+          break;
+        }
+        }
+
+        switch(i)
+        {
+                case 0:
+                {  
+                            xmlhttp.open("GET","http://dev-mystique.tavisca.com/api/deals/all?token=0yr3ejxix32yhxkmdpm2fjpw&$filter=Type eq 'hotel'",true);
+                            xmlhttp.send();
+
+                break;
+                }
+   
+                case 1:
+                {         
+                xmlhttp.open("GET","http://dev-mystique.tavisca.com/api/deals/all?token=0yr3ejxix32yhxkmdpm2fjpw&$filter=Type eq 'car'",true);
+                xmlhttp.send();
+                break;
+                }
+        }
+
+}
+function Clear()
+{
+        document.getElementById("demo").innerHTML="";
+}
+</script>
+</head>
+
+<body>
+<Form class="FormAjax">
+<TD><INPUT TYPE="Checkbox" NAME="RSS" onClick="loadXMLDoc();" >Hotel</TD>
+<TD><INPUT TYPE="Checkbox" NAME="RSS" onClick="loadXMLDoc();" >Cars</TD>
+<TD><INPUT TYPE="Checkbox" NAME="RSS" onClick="Clear();" >Clear</TD>
+</Form>
+<p id="demo"></p>
+</body>
+</html>
