@@ -16,13 +16,13 @@ function init()
 function move()
 {
 
-		if(i<=200)
+	/*	if(i<=(window.innerHeight/2))
 		{
 			imgObj.style.top= (parseInt(imgObj.style.top)-1) + 'px';
 			imgObj.style.left = (parseInt(imgObj.style.left) + 2) + 'px';
 			i++;
 		}
-		if(j<=200 && i>=200)
+		if(j<= && i>=200)
 		{
 			imgObj.style.top= (parseInt(imgObj.style.top)+1) + 'px';
 			imgObj.style.left = (parseInt(imgObj.style.left) + 2) + 'px';
@@ -43,8 +43,21 @@ function move()
 		if(l==200)
 		{
 			l=0;j=0;i=0;k=0;
+		}*/
+		/*if(i<(window.innerHeight))
+		{
+			imgObj.style.top= (parseInt(imgObj.style.top) + 1) + 'px';
+			imgObj.style.left = (parseInt(imgObj.style.left) +1 ) + 'px';
+			i++;
+		}*/
+		if(imgObj.style.left<window.innerWidth || imgObj.style.top>=0)
+		{
+				alert("jhbsd");
+				imgObj.style.left=imgObj.style.left+1+'px';
+				imgObj.style.top=imgObj.style.top-1+'px';
+
 		}
-		animate = setTimeout(move,5); // call moveRight in 20msec
+		animate = setTimeout(move,20); // call moveRight in 20msec
 }
 
 function stop()
