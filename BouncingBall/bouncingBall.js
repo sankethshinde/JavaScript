@@ -1,10 +1,10 @@
- 
+
 var min_X_Coordinate = 0;  //initial x-coordinate
 var max_X_Coordinate= window.innerWidth;  //this will adjust window width when width of window is change
 var min_Y_Coordinate= 0;  //initial y-coordinate
 var max_Y_Coordinate=window.innerHeight; //this will adjust window height when height of window is change
 var addBallObj=document.getElementById("addBall"); //this is used to handle onclick event on addball button
-
+var i=0;
 function movement(ballObject){
 
   this.obj=ballObject;
@@ -56,7 +56,11 @@ function createBall(){
    divTag.style.width='30px';
    divTag.style.height='30px';
    divTag.style.borderRadius = '50%';
-   divTag.style.backgroundColor='#'+ Math.floor(Math.random()*16777215).toString(16); 
+   i++;
+   if(i%2==0)
+    divTag.style.backgroundColor='#0026ff'
+   if(i%2!=0)
+    divTag.style.backgroundColor='#ff006e'
    //console.log(divTag);         
    document.body.appendChild(divTag);
    return divTag;
